@@ -1,0 +1,56 @@
+{
+	"folders": [
+		{
+			"name": "01_python_intro",
+			"path": "../01_python_intro"
+		},
+		{
+			"name": "02_python_type",
+			"path": "../02_python_type"
+		},
+		{
+			"name": "03_python_selection",
+			"path": "../03_python_selection"
+		},
+		{
+			"name": "04_python_opretar",
+			"path": "../04_python_opretar"
+		},
+		{
+			"name": "05_python_project",
+			"path": "../05_python_project"
+		},
+		{
+			"name": "06_ python_cuntrol stucture",
+			"path": "../06_ python_cuntrol stucture"
+		},
+		{
+			"name": "07_python_lab work",
+			"path": "../07_python_lab work"
+		},
+		{
+			"name": "08_python_loop",
+			"path": "../08_python_loop"
+		},
+		{
+			"name": "09_python_string",
+			"path": "../09_python_string"
+		},
+		{
+			"name": "10_python_list",
+			"path": "../10_python_list"
+		},
+		{
+			"name": "11_python_crud",
+			"path": "../11_python_crud"
+		},
+		{
+			"name": "12_python_fumctions",
+			"path": "../12_python_fumctions"
+		},
+		{
+			"name": "revison",
+			"path": "."
+		}
+	]
+}
