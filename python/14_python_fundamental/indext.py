@@ -1,74 +1,70 @@
 
-    marks_str = input("Enter student marks, separated by commas (e.g., 85, 92, 78): ")
-    marks = [int(mark) for mark in marks_str.split(',')]
- ValueError:
-    print("Invalid input. Please enter a list of numbers separated by commas.")
+
+
+
+studentm = [85,98,65,88,65,47,94,97,55,58,85,83,35,64,57]
+
+
+
+totalStudents = len(studentm)
+
+if totalStudents == 0:
+    print("No marks available to analyze.")
+
 else:
-    total_students = len(marks)
-    if total_students == 0:
-        print("No marks entered. Please try again.")
+    print("Student marks analysis")
+ 
+    highest_mark = max(studentm)
+   
+    lowest_mark = min(studentm)
+   
+    total_sum = sum(studentm)
+   
+    average_mark = total_sum / total_students
+
+    pass_count = 0
+    fail_count = 0
+    perfect_count = 0
+
+    for A in smark:
+       
+        if A >= 40:
+            pass_count += 1
+
+        else:              
+            fail_count += 1
+
+        if A == 100:
+            perfect_count += 1
+
+    pass_percentage = (pass_count / total_students) * 100
+
+    print(f"Total students : {total_students}")
+    print(f"Highest mark   : {highest_mark}")
+    print(f"Lowest mark    : {lowest_mark}")
+    print(f"Average mark   : {average_mark}")
+    print(f"Passed (>=40)  : {pass_count}")
+    print(f"Failed (<40)   : {fail_count}")
+    print(f"Scored 100     : {perfect_count}")
+    print(f"Pass percent   : {pass_percentage}%")
+
+    ascending = sorted(smark)
+   
+    descending = sorted(smark, reverse=True)
+   
+    print(f"Ascending order : {ascending}")
+   
+    print(f"Descending order: {descending}")
+
+    u_sorted = sorted(set(smark))
+
+    if len(u_sorted) >= 2:
+       
+        second_lowest = u_sorted[1]
+        second_highest = u_sorted[-2]
+        print(f"Second lowest   : {second_lowest}")
+        print(f"Second highest  : {second_highest}")
+
     else:
-        passed_students = sum(1 for mark in marks if mark >= 40)
-        failed_students = total_students - passed_students
-        total_marks = sum(marks)
-        average_marks = total_marks / total_students
-        pass_percentage = (passed_students / total_students) * 100
+        print("Not enough distinct values to determine second highest/lowest.")
 
-   
-        sorted_marks_asc = sorted(marks)
-
-        
-        second_highest_mark = sorted_marks_asc[-2] if len(sorted_marks_asc) > 1 else "N/A"
-        second_lowest_mark = sorted_marks_asc[1] if len(sorted_marks_asc) > 1 else "N/A"
-
-   
-        all_passed = all(mark >= 40 for mark in marks)
-        any_failed = any(mark < 40 for mark in marks)
-
-     
-        user_mark_input = input("Enter a mark to check if it exists in the list: ")
-        try:
-            user_mark = int(user_mark_input)
-            if user_mark in marks:
-                mark_exists_message = f"The mark {user_mark} exists in the list."
-            else:
-                mark_exists_message = f"The mark {user_mark} does not exist in the list."
-        except ValueError:
-            mark_exists_message = "Invalid input. Please enter a valid number."
-
-
-        grade_a_count = sum(1 for mark in marks if mark >= 90)
-        grade_b_count = sum(1 for mark in marks if 80 <= mark < 90)
-        grade_c_count = sum(1 for mark in marks if 70 <= mark < 80)
-        grade_d_count = sum(1 for mark in marks if 60 <= mark < 70)
-        grade_e_count = sum(1 for mark in marks if 40 <= mark < 60)
-        grade_f_count = sum(1 for mark in marks if mark < 40)
-
-    
-        print("\n--- Output ---")
-
-        print(f"Total Students: {total_students}")
-        print(f"Highest Marks: {max(marks)}")
-        print(f"Lowest Marks: {min(marks)}")
-        print(f"Average Marks: {average_marks:.1f}")
-
-        print(f"Passed: {passed_students}")
-        print(f"Failed: {failed_students}")
-        print(f"Pass Percentage: {pass_percentage:.1f}%")
-
-        print(f"Sorted Marks: {sorted_marks_asc}")
-        print(f"Second Highest Mark: {second_highest_mark}")
-        print(f"Second Lowest Mark: {second_lowest_mark}")
-
-        print(f"\nGrade A: {grade_a_count} Students")
-        print(f"Grade B: {grade_b_count} Students")
-        print(f"Grade C: {grade_c_count} Students")
-        print(f"Grade D: {grade_d_count} Students")
-        print(f"Grade E: {grade_e_count} Students")
-        print(f"Grade F: {grade_f_count} Students")
-
-        
-        print(f"\nAll students passed? {'Yes' if all_passed else 'No'}")
-        print(f"Any student failed? {'Yes' if any_failed else 'No'}")
-        print(f"\n{mark_exists_message}")
-        print("--------------")
